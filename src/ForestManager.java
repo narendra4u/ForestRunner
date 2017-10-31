@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 public class ForestManager {
 
 	private ForestFrame forestframe; // the home screen
-	private MazeFrame mazeframe; // the maze game screen
+	private MazeFrame mazeFrame; // the maze game screen
 	private Forest f;
 
 	public ForestManager() {
@@ -113,7 +113,7 @@ public class ForestManager {
 					"Btm 336 reached!", 1, 0, new ImageIcon(this.getClass().getResource("/sprites/door_open.gif")),
 					options, options[0]);
 		} // otherwise no special dialog is displayed
-		f.getPlayer().clearStats(); // clear all player stats
+		f.getStudent().clearStats(); // clear all player stats
 		f.clearGame(); // clear player progress in game
 		mazeFrame.getFrame().dispose(); // remove maze
 		forestframe.getFrame().setVisible(true); // show home screen
@@ -132,7 +132,7 @@ public class ForestManager {
 		// make new maze frame according to the maze made by Game
 		this.mazeFrame = new MazeFrame(f, f.getMaze().getWidth(), f.getMaze().getHeight());
 		// initialise maze that was created
-		this.mazeFrame.init(g.getMaze());
+		this.mazeFrame.init(f.getMaze());
 		this.mazeFrame.getFrame().requestFocus();
 		this.mazeFrame.getFrame().addKeyListener(f.getController()); // update
 																		// controller

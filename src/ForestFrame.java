@@ -50,7 +50,7 @@ public class ForestFrame {
 				//Make the title page
 				
 				//get images
-				ImageIcon link = new ImageIcon(ForestFrame.this.getClass().getResource("/sprites/linkImage.gif"));
+				ImageIcon link = new ImageIcon(ForestFrame.this.getClass().getResource("/sprites/linkImage.png"));
 				JLabel linkImage = new JLabel(link);
 				
 				ImageIcon title = new ImageIcon(ForestFrame.this.getClass().getResource("/sprites/mazerunner.png"));

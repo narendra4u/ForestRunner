@@ -50,7 +50,7 @@ public class MazeFrame {
 	//Character sprite constants
 	private String studentSprite;
 	/**String identifier for the character Link.*/
-	public static final String LinkSprite = "link";
+	public static final String gavinSprite = "link";
 	/**String identifier for the character William.*/
 	public static final String WilliamSprite = "william";
 	/**String identifier for the character Kainen.*/
@@ -169,12 +169,12 @@ public class MazeFrame {
 		sprites.put(pathSprite, new Sprite(pathSprite,x,y));
 		sprites.put(studentSprite, new Sprite(studentSprite,x,y));
 		sprites.put(doorSprite, new Sprite(doorSprite,x,y));
-		sprites.put(keySprite, new Sprite(keySprite,x,y));
-		sprites.put(enemySprite, new Sprite(enemySprite,x,y));
+		sprites.put(scardSprite, new Sprite(scardSprite,x,y));
+		sprites.put(cactusSprite, new Sprite(cactusSprite,x,y));
 		sprites.put(coinSprite, new Sprite(coinSprite,x,y));
-		sprites.put(swordSprite, new Sprite(swordSprite,x,y));
-		sprites.put(snowflakeSprite, new Sprite(snowflakeSprite,x,y));
-		sprites.put(killableEnemySprite, new Sprite(killableEnemySprite,x,y));
+		sprites.put(knifeSprite, new Sprite(knifeSprite,x,y));
+		sprites.put(rootSprite, new Sprite(rootSprite,x,y));
+		sprites.put(killableCactusSprite, new Sprite(killableCactusSprite,x,y));
 		sprites.put(hintSprite, new Sprite(hintSprite,x,y));
 		
 		//Set side panel characteristics
@@ -276,9 +276,9 @@ public class MazeFrame {
 		//Check if enemy unit
 		else if (m.isCactusCell(old)) {
 			if (m.itemCollected(Student.ROOT_POWER)) {
-				overLaySprite = killableEnemySprite;
+				overLaySprite = killableCactusSprite;
 			} else {
-				overLaySprite = enemySprite;
+				overLaySprite = cactusSprite;
 			}
 		}
 		//if the tile is door and is a path now (key collected)
@@ -293,16 +293,16 @@ public class MazeFrame {
 		}
 		//Check for key
 		else if (old.getType() == Cell.SCARD) {
-			overLaySprite = keySprite;
+			overLaySprite = scardSprite;
 		}
 		else if (old.getType() == Cell.SITEM) {
 			overLaySprite = coinSprite;
 		}
 		else if (old.getType() == Cell.KNIFE){
-			overLaySprite = swordSprite;
+			overLaySprite = knifeSprite;
 		}
 		else if (old.getType() == Cell.ROOT_POWER) {
-			overLaySprite = snowflakeSprite;
+			overLaySprite = rootSprite;
 		}
 		if (overLaySprite != "") {	//if an overlay sprite has been determined
 			JLabel overlayImage = new JLabel(sprites.get(overLaySprite).getSprite());
@@ -367,7 +367,7 @@ public class MazeFrame {
 				else if (m.isCactusCell(c)) {
 					for (int i = 0; i < m.getNumCactus(); i++) {	//find enemy ID
 						if (m.getCactusCell(i) != null && m.getCactusCell(i).equals(c)) {
-							overLaySprite = enemySprite;
+							overLaySprite = cactusSprite;
 							this.lastCactusPos[i] = c;
 							break;
 						}
@@ -380,16 +380,16 @@ public class MazeFrame {
 				}
 				//Check for key
 				else if (c.getType() == Cell.SCARD) {
-					overLaySprite = keySprite;
+					overLaySprite = scardSprite;
 				}
 				else if (c.getType() == Cell.SITEM) {
 					overLaySprite = coinSprite;
 				}
 				else if (c.getType() == Cell.KNIFE){
-					overLaySprite = swordSprite;
+					overLaySprite = knifeSprite;
 				}
 				else if (c.getType() == Cell.ROOT_POWER) {
-					overLaySprite = snowflakeSprite;
+					overLaySprite = rootSprite;
 				}
 				//Else if wall
 				else if (c.getType() == Cell.FOREST){
@@ -472,9 +472,9 @@ public class MazeFrame {
 		sidePanel.add(exitButton, gbc);
 		
 		//Add key and sword (set size 48 x 48)
-		inventory.add(Student.SCARD, new JLabel(new Sprite(keySprite,48,48).getSprite()));
-		inventory.add(Student.KNIFE, new JLabel(new Sprite(swordSprite,48,48).getSprite()));
-		inventory.add(Student.ROOT_POWER, new JLabel(new Sprite(snowflakeSprite,48,48).getSprite()));
+		inventory.add(Student.SCARD, new JLabel(new Sprite(scardSprite,48,48).getSprite()));
+		inventory.add(Student.KNIFE, new JLabel(new Sprite(knifeSprite,48,48).getSprite()));
+		inventory.add(Student.ROOT_POWER, new JLabel(new Sprite(rootSprite,48,48).getSprite()));
 		
 		 JPanel invPanel = new JPanel();
          invPanel.setPreferredSize(new Dimension(200,60));

@@ -33,7 +33,7 @@ public class SettingsPanel extends JPanel {
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints bag = new GridBagConstraints();
 		
-		Sprite gavinPanel = new Sprite(ForestFrame.gavinSprite, 48, 48);
+		Sprite gavinPanel = new Sprite(MazeFrame.gavinSprite, 48, 48);
 		//Sprite williamPanel = new Sprite(MazeFrame.WilliamSprite, 48, 48);
 		//Sprite kainenPanel = new Sprite(MazeFrame.KainenSprite, 48, 48);
 		
