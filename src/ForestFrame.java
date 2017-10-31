@@ -12,7 +12,7 @@ import javax.swing.*;
 public class ForestFrame {
 
 	private InstructionFrame instructions; 
-	private JPanel optionPanel;
+	private JPanel settingsPanel;
 	private JFrame frame; 
 	
 	//Frame components
@@ -33,7 +33,7 @@ public class ForestFrame {
 		final Forest f = forest;
 		
 		this.instructions = new InstructionFrame();
-		this.optionPanel = new OptionPanel(f);
+		this.settingsPanel = new SettingsPanel(f);
 		
 		//Set user size
 		frame.setSize(width, height);
@@ -83,9 +83,9 @@ public class ForestFrame {
 				frame.add(playButton,c); 
 				this.playButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						if (JOptionPane.showConfirmDialog(null,optionPanel,"Choose Name & Character ",
+						if (JOptionPane.showConfirmDialog(null, settingsPanel,"Choose Name & Character ",
 								JOptionPane.DEFAULT_OPTION,JOptionPane.PLAIN_MESSAGE) == JOptionPane.OK_OPTION) {
-							f.getStudent().setName(optionPanel.getName());
+							f.getStudent().setName(settingsPanel.getName());
 							f.createMaze(); //based on user options
 							f.setIsInGame(true);
 							f.setIsGameOver(false);
@@ -131,22 +131,4 @@ public class ForestFrame {
 	public JFrame getFrame() {
 		return frame;
 	}
-		
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

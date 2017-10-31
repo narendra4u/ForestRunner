@@ -6,12 +6,12 @@
  */
 public class Cactus {
 boolean isDead; 
-Tile location; //where cactus is located in the maze
+Cell location; //where cactus is located in the maze
 
 
 
 //constructor for the cactus, with on a specifit tile on the maze
-public Cactus (Tile t){
+public Cactus (Cell t){
 	location=t;
 }
 // empty, when the location is not yet decided
@@ -29,12 +29,12 @@ public boolean isDead(){
 }
 
 //get the locaiton of the cactus in the maze
-public Tile getLocation(){
+public Cell getLocation(){
 	return location;
 }
 
 //updates the locaiton of the cactus in the maze
-public void setLocation(Tile t){
+public void setLocation(Cell t){
 	location=t;
 }
 

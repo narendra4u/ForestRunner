@@ -13,7 +13,7 @@ public class Student {
 
 	private String name;
 	private String character; //probably we don't need it
-	private Tile location;
+	private Cell location;
 	private boolean isDead; 
 	
 	private ArrayList<Boolean> inventory;
@@ -26,7 +26,7 @@ public class Student {
 	//Constant for knife tool used to cut the cactus
 	public static final int KNIFE=1;
 	//Constant for root power identifying position in inventory
-	private static final int ROOT_POWER=2;
+	public static final int ROOT_POWER=2;
 	public static final int NUM_INVENTORY_ITEMS=3;
 	
 	//constructor for our student
@@ -61,11 +61,11 @@ public class Student {
 	}
 	
 	//getter and setter for the location of the student in the game
-	public Tile getLocation () {
+	public Cell getLocation () {
 		return location;
 	}
-		public void setLocation (Tile t) {
-		location = t;
+		public void setLocation (Cell c) {
+		location = c;
 	}
 	
 	

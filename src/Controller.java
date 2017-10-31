@@ -1,11 +1,12 @@
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 
 /* controller for student in the maze. 
- * user use the keyboard arrrows to control the player
+ * user use the keyboard arrows to control the player
  */
-public class Controller {
+public class Controller implements KeyListener {
 
 	private Maze maze; 
 	
@@ -41,7 +42,7 @@ public class Controller {
 		 
 		 //Update the player location if a valid move was made
 		 if (maze.isValid(dx, dy)) {
-			 maze.updatePlayerLoc(dx, dy);
+			 maze.updateStudentLoc(dx, dy);
 		 }
 	}
 

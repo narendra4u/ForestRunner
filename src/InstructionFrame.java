@@ -55,9 +55,9 @@ public class InstructionFrame {
 			    //set up JLabels for the images displayed on the instruction screen
 				JLabel knife = new JLabel(new Sprite(MazeFrame.knifeSprite,48,48).getSprite());
 				JLabel scard = new JLabel(new Sprite(MazeFrame.scardSprite,48,48).getSprite());
-				JLabel coin = new JLabel(new Sprite(MazeFrame.coinSprite,48,48).getSprite());
+				JLabel coin = new JLabel(new Sprite(MazeFrame.csoinSprite,48,48).getSprite());
 				JLabel cactus = new JLabel(new Sprite(MazeFrame.cactusSprite,48,48).getSprite());
-				JLabel root = new JLabel(new Sprite(MazeFrame.rooteSprite, 48, 48).getSprite());
+				JLabel root = new JLabel(new Sprite(MazeFrame.rootSprite, 48, 48).getSprite());
 				JLabel cactusF = new JLabel(new Sprite(MazeFrame.killableCactusSprite, 48, 48).getSprite());
 
 				JLabel keyboard = new JLabel(new ImageIcon(wasd));
